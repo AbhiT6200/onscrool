@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slid anime</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: all 1s ease;
+        }
+
+        .main {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            transition: all 1s ease;
+            background-color: aqua;
+        }
+
+        .box,
+        .scops {
+            color: #0aa;
+            border-radius: 10px;
+            border: 1px solid #0aa;
+            background-color: #aababa;
+            padding: 100px 0;
+            width: fit-content;
+            cursor: pointer;
+            filter: blur(3px);
+            transition: all 1s ease;
+            width: 50%;
+            opacity: 0;
+        }
+
+        .show-box {
+            transform: translate(0);
+            width: 70%;
+            cursor: pointer;
+            filter: blur(0);
+            transition: all 1s ease;
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="box show-box" style="margin-top: 300px;">
+            <h1>This is a box1</h1>
+        </div>
+        <div class="box">
+            <h1>This is a box2</h1>
+        </div>
+        <div class="box">
+            <h1>This is a box3</h1>
+        </div>
+        <div class="box">
+            <h1>This is a box4</h1>
+        </div>
+        <div class="box">
+            <h1>This is a box5</h1>
+        </div>
+        <div class="box">
+            <h1>This is a box6</h1>
+        </div>
+        <div class="box">
+            <h1>This is a box7</h1>
+        </div>
+        <div class="box">
+            <h1>This is a box8</h1>
+        </div>
+        <div class="box">
+            <h1>This is a box9</h1>
+        </div>
+        <div class="box">
+            <h1>This is a box10</h1>
+        </div>
+        <div class="box">
+            <h1>This is a box8</h1>
+        </div>
+        <div class="box">
+            <h1>This is a box9</h1>
+        </div>
+        <div class="box">
+            <h1>This is a box10</h1>
+        </div>
+        <!-- <div class="scops">
+            <h2>scop box 1</h2>
+        </div>
+        <div class="scops">
+            <h2>scop box 2</h2>
+        </div>
+        <div class="scops">
+            <h2>scop box 3</h2>
+        </div>
+        <div class="scops">
+            <h2>scop box 4</h2>
+        </div>
+        <div class="scops">
+            <h2>scop box 5</h2>
+        </div>
+        <div class="scops">
+            <h2>scop box 6</h2>
+        </div>
+        <div class="scops">
+            <h2>scop box 7</h2>
+        </div> -->
+    </div>
+    <script>
+        const box = document.querySelectorAll('.box');
+        const ovserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                entry.target.classList.toggle('show-box', entry.isIntersecting)
+            })
+        },
+        {
+            threshold: 1,
+            //rootMargin: '-350px',
+        }
+        )
+
+        box.forEach(box => {
+            ovserver.observe(box);
+        })
+
+
+
+
+
+
+
+        /*   box.forEach(boxx => {
+            boxx.addEventListener('click', () => {
+                boxx.classList.toggle('show-box');
+            })
+        })
+        const bx = document.querySelectorAll('.scops');
+        bx.forEach(anime =>{
+            anime.addEventListener('click', () => {
+                anime.classList.toggle('show-box');
+            });
+        })*/
+
+
+    </script>
+</body>
+
+</html>
